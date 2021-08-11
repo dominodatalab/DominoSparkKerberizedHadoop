@@ -1,0 +1,13 @@
+!.gitkeep
+.DS_Store
+
+/scratch/**
+/tmp/**
+
+/.idea/**
+target
+*.class
+
+/.ivy2/**
+/sbt-launch.jar
+scalastyle-config.xml
