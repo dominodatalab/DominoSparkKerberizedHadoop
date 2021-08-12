@@ -3,6 +3,7 @@ from pyspark.sql.types import StructType,StructField, StringType, DoubleType
 import random
 sparkSession = SparkSession.builder.appName("Calculate Pi") \
 .config("spark.dynamicAllocation.enabled", "false") \
+.config("fs.default.name", "hdfs://10.0.1.76:8020") \
 .getOrCreate()
 sc=sparkSession.sparkContext
 def inside(p):
