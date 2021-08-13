@@ -1,6 +1,6 @@
 #Name BASE PySpark Workspace Python 3.7 Hadoop 3.2.1 Spark 3.1.1
 #Base Env - quay.io/domino/base:Ubuntu18_DAD_py3.7_r3.6_2019q4
-ENV EMR_MASTER_PRIVATE_IP 10.0.1.76
+ENV EMR_MASTER_PRIVATE_IP 10.0.123.114
 
 ENV HADOOP_VERSION=3.2.1
 ENV HADOOP_HOME=/opt/hadoop
