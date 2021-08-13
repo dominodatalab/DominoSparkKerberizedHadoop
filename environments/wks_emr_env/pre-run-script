@@ -1,0 +1,5 @@
+SPARK_PUBLIC_DNS=$(cat /etc/spark/conf/spark-defaults.conf | grep "spark.driver.host" | cut -d " " -f2)
+cat /etc/spark/conf.dist/spark-defaults.conf >> /etc/spark/conf/spark-defaults.conf
+sed -i '/SPARK_PUBLIC_DNS/d' /etc/spark/conf/spark-env.sh
+echo " " >> /etc/spark/conf/spark-env.sh
+echo "export SPARK_PUBLIC_DNS=$SPARK_PUBLIC_DNS" >> /etc/spark/conf/spark-env.sh
