@@ -12,3 +12,9 @@
 ```
 
 ##Workspace which connects to and On Demand cluster
+
+
+##Scripts from on demand spark to run on yarn in cluster mode
+cd /mnt/code
+./generate-data-emr.sh 10 hdfs://10.0.1.76:8020 /user/dominospark/ld-10/ 
+./filter-data-emr.sh 5 hdfs://10.0.1.76:8020 /user/dominospark/ld-10/ /user/dominospark/sd-5/
