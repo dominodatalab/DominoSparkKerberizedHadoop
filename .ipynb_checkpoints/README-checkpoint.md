@@ -6,10 +6,12 @@
 2. Run notebook test-emr-spark-client-mode.ipynb (To test connectivity from spark in client mode and kerberized yarn)
 3. Run notebook test-emr-spark-client-mode-calc-pi.ipynb (To test connectivity from spark in client mode and kerberized yarn)
 4. Open a terminal and run the following commands to test running spark code on kerberized yarn in cluster mode
-```
+
 %cd /mnt/code/scripts
-%$SPARK_HOME/bin/spark-submit --master yarn --deploy-mode cluster ../python/calcpi.py hdfs://10.0.1.76:8020 /user/dominospark/mypi/
-```
+%hdfs dfs -rmr /user/dominospark/mypi
+% ./run-pyspark-on-emr-server-mode.sh ../python/calcpi.py hdfs://10.0.123.114:8020 /user/dominospark/mypi
+
+
 
 ##Workspace which connects to and On Demand cluster
 
