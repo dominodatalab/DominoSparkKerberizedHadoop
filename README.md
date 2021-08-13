@@ -14,9 +14,12 @@
 
 
 ##Workspace which connects to and On Demand cluster
-
+Run notebooks:
+1. test_on_demand_spark.ipynb (Calculate Pi)
+2. test-local-spark-kerb-hdfs-data-creation.ipynb (First create data on the hdfs cluster using local mode)
+3. test_on_demand_spark_kerb_hdfs.ipynb (Write to HDFS using EMR cluster mode and copy into dataset and process)
 
 ##Scripts from on demand spark to run on yarn in cluster mode
-cd /mnt/code
+cd /mnt/code/scripts
 ./generate-data-emr.sh 10 hdfs://10.0.1.76:8020 /user/dominospark/ld-10/ 
 ./filter-data-emr.sh 5 hdfs://10.0.1.76:8020 /user/dominospark/ld-10/ /user/dominospark/sd-5/
