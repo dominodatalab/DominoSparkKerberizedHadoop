@@ -1,0 +1,15 @@
+%env HADOOP_HOME /usr/lib/hadoop
+%env HADOOP_CONF_DIR /etc/hadoop/conf
+%env HADOOP_YARN_HOME /usr/lib/hadoop
+%env HADOOP_MAPRED_HOME /usr/lib/hadoop
+%env HADOOP_HDFS_HOME /usr/lib/hadoop-hdfs
+
+%env SPARK_HOME /usr/lib/spark
+%env SPARK_CONF_DIR /etc/spark/conf
+#%env PYTHONPATH /opt/spark/python/lib/py4j-0.10.7-src.zip
+%env PYSPARK_PYTHON /opt/conda/bin/python
+%env PYSPARK_DRIVER_PYTHON /opt/conda/bin/python
+%env PYTHONPATH /usr/lib/spark/python/lib/py4j-0.10.7-src.zip
+#%env PATH /usr/lib/hadoop/bin:/bin:/usr/lib/spark/bin::/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/tmp:/opt/oracle/instantclient_12_1:/home/ubuntu/.local/bin:/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/share/scala/bin:/opt/oracle/instantclient_12_1:/home/ubuntu/.local/bin:/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/hadoop-hdfs/bin:/opt/hadoop/bin
+!hdfs dfs -rm -r /user/dominospark/example*
+!echo $PYTHONPATH
