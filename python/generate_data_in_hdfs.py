@@ -4,19 +4,20 @@ import random
 import sys
 
 def main(args):
-    cnt=args[0]
+    cnt=int(args[0])
     hdfs_endpoint = args[1] #hdfs://10.0.1.76:8020
     hdfs_path = args[2]
     master='yarn'
-    if(args.length>3):
+    if(len(args)>3):
         master = args[3]
+
     sparkSession = SparkSession.builder.appName("Generate Data") \
-    .config("master",master)
+    .master(master) \
     .config("spark.dynamicAllocation.enabled", "false") \
     .config("fs.default.name", hdfs_endpoint) \
     .getOrCreate()
-    sc=sparkSession.sparkContext
-    import random
+
+  
     #Create datasets
     data = []
 
@@ -30,7 +31,7 @@ def main(args):
 
     df = sparkSession.createDataFrame(data=data, schema=columns)
     df.write.csv(hdfs_path)
-    sc.stop()
+    sparkSession.stop()
 if __name__ == '__main__':
     import sys
     main(sys.argv[1:])

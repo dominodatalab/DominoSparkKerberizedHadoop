@@ -9,15 +9,15 @@ def main(args):
     hdfs_src_path = args[2]
     hdfs_dest_path = args[3]
     master='yarn'
-    if(args.length>4):
+    if(len(args)>4):
         master = args[4]
     sparkSession = SparkSession.builder.appName("Generate Data") \
-    .conf("master",master)
+    .master(master) \
     .config("spark.dynamicAllocation.enabled", "false") \
     .config("fs.default.name", hdfs_endpoint) \
     .getOrCreate()
-    sc=sparkSession.sparkContext
 
+    
     columns = StructType([ StructField("id", IntegerType(), True),
                            StructField("v1", IntegerType(), True),
                            StructField("v2", IntegerType(), True),
@@ -26,7 +26,7 @@ def main(args):
     df_load = sparkSession.read.csv(hdfs_src_path,columns)
     df_load_filtered = df_load.where(df_load.id < filter_criteria)
     df_load_filtered.write.csv(hdfs_dest_path)
-    sc.stop()
+    sparkSession.stop()
 if __name__ == '__main__':
     import sys
     main(sys.argv[1:])
