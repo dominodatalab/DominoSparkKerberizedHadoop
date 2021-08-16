@@ -9,7 +9,7 @@ ENV HDFS_CONF_DIR=/etc/hadoop
 
 ENV HADOOP_HOME=/opt/hadoop
 ENV HADOOP_CONF_DIR=/opt/hadoop/etc/hadoop
-ENV SPARK_HOME=/opt/sparka
+ENV SPARK_HOME=/opt/spark
 ENV SPARK_CONF_DIR=/opt/spark/conf
 ENV SPARK_HOME_EMR=/usr/lib/spark
 ENV SPARK_CONF_DIR_EMR=/etc/spark/conf
