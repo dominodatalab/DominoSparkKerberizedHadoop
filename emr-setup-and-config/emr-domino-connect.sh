@@ -1,9 +1,11 @@
 #!/bin/bash
+sed -i 's|HADOOP_HOST_NAME|'$(hostname -i)'|g' config.json
 
 rm -rf www
 rm -rf /tmp/hadoop-binaries-configs
 
 mkdir -p www
+cp config.json www/
 mkdir -p /tmp/hadoop-binaries-configs/configs
 mkdir -p /tmp/krb/
 cp  /etc/krb5.conf /tmp/krb/
