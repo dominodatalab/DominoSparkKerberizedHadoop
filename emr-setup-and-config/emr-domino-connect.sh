@@ -36,7 +36,7 @@ cd /tmp
 tar -zcf hadoop-binaries-configs.tar.gz hadoop-binaries-configs
 cd ~
 mv /tmp/hadoop-binaries-configs.tar.gz www/
-mv /etc/krb5.com www/
+cp /etc/krb5.com www/
 cd www
 
 nohup /usr/bin/python3 -m http.server &
